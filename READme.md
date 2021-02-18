@@ -4,6 +4,7 @@ The learning goal of this project is to work with the following new technologies
 1. React-Native
 2. MongoDB
 3. Payment APIs
+4. Work on a windows enviroment
 
 The application goals of this project is to accomplish the following things:
 1. Keep track of payments (IF POSSIBLE PEER TO PEER MONEY TRANSFER)
