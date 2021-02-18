@@ -1,15 +1,14 @@
 ## Summary
 This project was inspired to help keep trainers connected, check in on progress, and maintain payments with their clients.
 The learning goal of this project is to work with the following new technologies
-React-Native
-MongoDB
-Payment APIs
+1. React-Native
+2. MongoDB
+3. Payment APIs
 
 The application goals of this project is to accomplish the following things:
-Keep track of payments
-(IF POSSIBLE PEER TO PEER MONEY TRANSFER)
-Keep track of clients workout
-Keep track on Trainers rating
+1. Keep track of payments (IF POSSIBLE PEER TO PEER MONEY TRANSFER)
+2. Keep track of clients workout
+3. Keep track on Trainers rating
 
 ## Layout of project
 ![side-project fitness app](https://user-images.githubusercontent.com/40606399/108409886-bd7d5a80-71f4-11eb-9607-87e33079dd68.png)
