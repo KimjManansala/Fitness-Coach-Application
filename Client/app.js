@@ -16,10 +16,10 @@ import { routerMiddleware} from 'react-router-redux'
 const routing = routerMiddleware(history);
 
 // Root reducer
-import rootReducer from './reducers/index';
+import rootReducer from './Reducers/rootReducer.js';
 
 // Components
-import Home from './Views/HomePage'
+import Homepage from './Views/HomePage'
 
 
 // Initialize redux store and thunk middleware
@@ -32,7 +32,7 @@ ReactDOM.render(
   <Provider store={store}>
         <Router history={history}>
 				<Switch>
-					<Route path="/" exact component={Home}/>
+					<Route path="/" exact component={Homepage}/>
 				</Switch>
         </Router>
   </Provider>,
