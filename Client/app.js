@@ -19,7 +19,7 @@ const routing = routerMiddleware(history);
 import rootReducer from './Reducers/rootReducer.js';
 
 // Components
-import Homepage from './Views/HomePage'
+import Homepage from './Views/HomePage/HomePage.js'
 
 
 // Initialize redux store and thunk middleware
