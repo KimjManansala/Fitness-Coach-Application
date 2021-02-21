@@ -15,10 +15,10 @@ The application goals of this project is to accomplish the following things:
 ![side-project fitness app](https://user-images.githubusercontent.com/40606399/108409886-bd7d5a80-71f4-11eb-9607-87e33079dd68.png)
 
 
-## Day by Day Log
+## Desired Day by Day Log
 ### Day 1
 Goal: Setup windows subsystem for linux to start developing on a windows machine and start a design for the layout of the project
-Was this goal met? Windows subystem for linux is up and working and a design for the project layout was created
+
 
 ### Day 2
 Goal: Setup react/redux/mongodb. Get everything connected and running to begin developing
@@ -39,3 +39,10 @@ Goal: Ship application and get feedback from client
 
 ### Day 10
 Goal: Create mobile version  with React Native
+
+## Actual Day by Day Log
+### Day 1
+Windows subsystem for linux to start developing on windows machine works! Design for the initial layout of the project was created
+
+### Day 2
+React/redux express setup
