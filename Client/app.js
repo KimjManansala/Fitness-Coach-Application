@@ -20,6 +20,7 @@ import rootReducer from './Reducers/rootReducer.js';
 
 // Components
 import Homepage from './Views/HomePage/HomePage.js'
+import SignIn from './Views/SignUpAndSignIn/SignIn';
 
 
 // Initialize redux store and thunk middleware
@@ -33,6 +34,7 @@ ReactDOM.render(
         <Router history={history}>
 				<Switch>
 					<Route path="/" exact component={Homepage}/>
+          <Route path="/sign_in" exact component={SignIn}/>
 				</Switch>
         </Router>
   </Provider>,
