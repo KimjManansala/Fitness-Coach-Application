@@ -4,11 +4,10 @@ const compress = require('compression');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const db = require('./config/keys').mongoURI;
-
+require('dotenv').config()
 
 mongoose
-    .connect(db, { useNewUrlParser: true })
+    .connect(process.env.DB_NAME, { useNewUrlParser: true })
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error(err));
 
