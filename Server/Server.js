@@ -3,6 +3,14 @@ const session = require('express-session');
 const compress = require('compression');
 const path = require('path');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const db = require('./config/keys').mongoURI;
+
+
+mongoose
+    .connect(db, { useNewUrlParser: true })
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.error(err));
 
 // heroku
 // const sslRedirect = require('heroku-ssl-redirect');

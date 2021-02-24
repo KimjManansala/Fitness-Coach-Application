@@ -31,6 +31,7 @@
     "express-session": "^1.15.6",
     "history": "^4.7.2",
     "jslint": "^0.12.1",
+    "mongoose": "^5.11.17",
     "nodemon": "^1.18.3",
     "path": "^0.12.7",
     "prop-types": "^15.6.2",
