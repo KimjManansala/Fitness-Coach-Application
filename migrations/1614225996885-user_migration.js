@@ -10,6 +10,7 @@ async function up () {
   User.create({
     firstName: 'Test Client',
     lastName: 'Client',
+    password: 'password',
     user_type: 'client',
     user_weght: 70,
     user_age: 21,
@@ -28,6 +29,7 @@ async function up () {
   User.create({
     firstName: "Test Trainer",
     lastName: "Trainer",
+    password: 'password',
     user_type: "trainer",
     user_weght: 80,
     user_age: 21,
