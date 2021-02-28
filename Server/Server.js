@@ -3,13 +3,7 @@ const session = require('express-session');
 const compress = require('compression');
 const path = require('path');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 require('dotenv').config()
-
-mongoose
-    .connect(process.env.DB_NAME, { useNewUrlParser: true,  useUnifiedTopology: true })
-    .then(() => console.log('Connected to MongoDB'))
-    .catch(err => console.error(err));
 
 // heroku
 // const sslRedirect = require('heroku-ssl-redirect');
