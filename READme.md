@@ -1,3 +1,6 @@
+
+## Todo Need to update how to setup
+
 ## Summary
 This project was inspired to help keep trainers connected, check in on progress, and maintain payments with their clients.
 The learning goal of this project is to work with the following new technologies
@@ -46,3 +49,8 @@ Windows subsystem for linux to start developing on windows machine works! Design
 
 ### Day 2
 React/redux express setup
+
+### Day 3
+Switched from mongo to postgress
+
+Notes From KimJ: The reason there was a switch from mongo to postgress is....
