@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +13,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { handleSignInSignUpAPI } from '../../Actions/SignInSignUp.js';
 
 function Copyright() {
   return (
@@ -47,7 +49,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SignIn() {
+  const dispatch = useDispatch();
   const classes = useStyles();
+
+  const handleSignInSignUp = () => {
+    dispatch(handleSignInSignUpAPI());
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -59,7 +66,7 @@ function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <div className={classes.div} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
@@ -92,8 +99,9 @@ function SignIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={handleSignInSignUp}
           >
-            Sign In
+            LOGINTO GOOGLE TEST
           </Button>
           <Grid container>
             <Grid item xs>
@@ -107,7 +115,7 @@ function SignIn() {
               </Link>
             </Grid>
           </Grid>
-        </form>
+        </div>
       </div>
       <Box mt={8}>
         <Copyright />
