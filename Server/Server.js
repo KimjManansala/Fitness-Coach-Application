@@ -3,6 +3,7 @@ const session = require('express-session');
 const compress = require('compression');
 const path = require('path');
 const bodyParser = require('body-parser');
+const passport = require('passport');
 require('dotenv').config()
 
 // heroku
@@ -24,13 +25,12 @@ app.use(bodyParser.urlencoded({ limit: '5mb', extended: false }));
 
 
 // ALL ROUTES WILL GO HERE IMPORTED FROM THE ROUTES IN THE API DIRECTORY
+app.use(require('./API/user'));
 
 // frontend entry
 app.use('*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'build/index.html'));
 });
-
-
 
 // Handles unknown routes
 app.use((req, res, next) => {
