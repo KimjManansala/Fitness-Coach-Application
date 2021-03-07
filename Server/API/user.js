@@ -1,13 +1,15 @@
 require('dotenv').config()
 const express = require("express");
 const router = express.Router();
-// const validator = require("email-validator");
-// const bcrypt = require("bcrypt");
+
 const bodyParser = require("body-parser");
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const User = require('../../models/user');
-
+const db = require("../../models");
+const Sequelize = require("sequelize");
+const validator = require("email-validator");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 router.use(bodyParser.json());
 
 router.use(
@@ -16,6 +18,141 @@ router.use(
     })
 );
 module.exports = router;
+
+
+
+router.post("/create/user", (req, res) => {
+    console.log('hello')
+    console.log(User)
+    let user = req.body.user;
+    if (validator.validate(user.email)) {
+        bcrypt
+            .hash(user.password, saltRounds)
+            .then(password => {
+                createUser(user.email, password, user.fName, user.lName)
+                    .then(data => {
+                        if (data.created) {
+                            req.session.user = data.member.dataValues
+
+                            res.send({
+                                success: true,
+                                user: data.member.dataValues
+                            });
+                        } else {
+                            res.send({
+                                error: {
+                                    username: "Username is taken"
+                                }
+                            });
+                        }
+                    })
+
+                    .catch(er => {
+                        console.log(er);
+                        res.send({
+                            error: {
+                                register: "Error in registering"
+                            }
+                        });
+                    });
+            })
+
+            .catch(er => {
+                console.log(er);
+                res.send({
+                    error: {
+                        register: "Error in registering"
+                    }
+                });
+            });
+    } else {
+        res.send({
+            error: {
+                email: "Invalid Email"
+            }
+        });
+    }
+});
+
+function createUser(email, hash, firstName, lastName) {
+    console.log(User)
+
+    return new Promise((resolve, reject) => {
+        db.User.findOrCreate({
+                where: {
+                    email: email
+                },
+                defaults: {
+                    password: hash,
+                    firstName: firstName,
+                    lastname: lastName,
+                    email: email,
+                }
+            })
+            .spread((user, created) => {
+                console.log(created);
+                let data = {
+                    member: user,
+                    created: created
+                };
+                resolve(data);
+            })
+            .catch(er => {
+                console.log(
+                    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+                );
+                reject(er);
+            });
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Configure Passport authenticated session persistence.
@@ -56,7 +193,7 @@ router.use(passport.session());
 
 router.get('/auth/google',
     passport.authenticate('google', {
-        scope:  ["profile", "email"]
+        scope: ["profile", "email"]
     }));
 
 router.get('/auth/google/callback',
