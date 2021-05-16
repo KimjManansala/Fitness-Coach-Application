@@ -43,6 +43,7 @@
     "watch": "^0.13.0"
   },
   "devDependencies": {
+    "prettier": "2.3.0",
     "sequelize-cli": "^5.4.0"
   }
 }
