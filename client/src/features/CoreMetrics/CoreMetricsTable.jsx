@@ -2,7 +2,7 @@ import React from "react";
 import { Header, Image, Table } from "semantic-ui-react";
 
 const CoreMetricsTable = () => (
-    <Table celled collapsing>
+    <Table celled collapsing fluid>
         <Table.Header>
             <Table.Row>
                 <Table.HeaderCell>
