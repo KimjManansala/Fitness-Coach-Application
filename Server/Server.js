@@ -28,6 +28,8 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
 
+app.use(require('./API/coreMetricsAPI'))
+
 // frontend entry
 // app.use('*', (req, res) => {
 //     res.sendFile(path.join(__dirname, '..', 'Build/index.html'));

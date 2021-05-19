@@ -1,10 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types'
 import { Card, Grid } from 'semantic-ui-react'
 import CoreMetricsTable from './CoreMetricsTable'
+import { getUserMetrics } from './actions';
 
 const CoreMetrics = props => {
+    const dispatch = useDispatch()
     useEffect(() => {
+        dispatch(getUserMetrics(1));
         console.log("need to call user params")
     }, [])
     return (
