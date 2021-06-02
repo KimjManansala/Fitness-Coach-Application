@@ -3,3 +3,4 @@ node_modules
 keys
 config/config.js
 client/node_modules
+server/node_modules
