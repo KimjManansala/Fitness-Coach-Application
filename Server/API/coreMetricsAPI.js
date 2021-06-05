@@ -13,7 +13,7 @@ router.use(
 
 router.get('/user_metrics', (req, res) => {
     const { userId } =  req.query;
-    
+    console.log('hello')
     const userMetrics = getUserCoreMetrics(userId);
     res.status(200);
     res.send(userMetrics, 200)
