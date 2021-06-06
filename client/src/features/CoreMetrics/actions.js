@@ -19,7 +19,6 @@ export function getUserMetrics(userId) {
             try {
                 const getUserMetricsRes = await getUserMetricsAPI(userId);
                 dispatch(updateUserMetrics(getUserMetricsRes.data))
-                
             } catch (error) {
                 console.log('error')
             }
