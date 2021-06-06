@@ -1,7 +1,6 @@
 import { UPDATE_USER_METRICS } from "./actionTypes"
 
 export const coreMetricsDefaultState = {
-    workouts: [],
     userGoals: {
         bodyWeight: 0,
         bench: 225,
@@ -9,7 +8,7 @@ export const coreMetricsDefaultState = {
     userMetrics: {},
 }
 
-export const coreMetricsREducer = (state = coreMetricsDefaultState, action) {
+export const coreMetricsReducer = (state = coreMetricsDefaultState, action) => {
     switch (action.type) {
         case UPDATE_USER_METRICS:
             return {
